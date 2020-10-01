@@ -1,4 +1,4 @@
-package com.example.hellotoast;
+package com.example.hellotoasticon;
 
 import androidx.appcompat.app.AppCompatActivity;
 
