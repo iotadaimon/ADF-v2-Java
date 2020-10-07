@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Two Activities Challenge</string>
+    <string name="button_one_text">Text One</string>
+    <string name="button_two_text">Text Two</string>
+    <string name="button_three_text">Text Three</string>
 </resources>
