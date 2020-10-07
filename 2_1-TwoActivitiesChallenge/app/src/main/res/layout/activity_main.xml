@@ -20,7 +20,7 @@
             android:layout_width="@dimen/button_width"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:onClick=""
+            android:onClick="onButtonOneClick"
             android:text="@string/button_one_text" />
 
         <Button
@@ -28,7 +28,7 @@
             android:layout_width="@dimen/button_width"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:onClick=""
+            android:onClick="onButtonTwoClick"
             android:text="@string/button_two_text" />
 
         <Button
@@ -36,8 +36,8 @@
             android:layout_width="@dimen/button_width"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:onClick=""
+            android:onClick="onButtonThreeClick"
             android:text="@string/button_three_text" />
-        
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
