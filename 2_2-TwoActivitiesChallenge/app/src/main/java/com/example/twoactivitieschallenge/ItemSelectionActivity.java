@@ -2,10 +2,14 @@ package com.example.twoactivitieschallenge;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 
 public class ItemSelectionActivity extends AppCompatActivity {
+
+    private static final String EXTRA_ITEM = "com.example.twoactivitieschallenge.extra.ITEM";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -13,33 +17,12 @@ public class ItemSelectionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_item_selection);
     }
 
-    public void addItem1(View view) {
-    }
+    public void addItem(View view) {
+        String itemName = ((Button) view).getText().toString();
 
-    public void addItem2(View view) {
-    }
-
-    public void addItem3(View view) {
-    }
-
-    public void addItem4(View view) {
-    }
-
-    public void addItem5(View view) {
-    }
-
-    public void addItem6(View view) {
-    }
-
-    public void addItem7(View view) {
-    }
-
-    public void addItem8(View view) {
-    }
-
-    public void addItem9(View view) {
-    }
-
-    public void addItem10(View view) {
+        Intent resultIntent = new Intent();
+        resultIntent.putExtra(EXTRA_ITEM, itemName);
+        setResult(RESULT_OK, resultIntent);
+        finish();
     }
 }
