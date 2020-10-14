@@ -9,7 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TwoActivitiesChallenge">
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".ItemSelectionActivity"
+            android:label="@string/item_selection_activity_label" />
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/main_activity_label">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
