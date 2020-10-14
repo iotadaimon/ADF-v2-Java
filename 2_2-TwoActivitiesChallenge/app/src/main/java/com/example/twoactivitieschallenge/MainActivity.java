@@ -1,14 +1,21 @@
 package com.example.twoactivitieschallenge;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+    public static final int ITEM_REQUEST = 1;
+
     private TextView[] items;
+    private int pos = 0;
+    private final int MAX_POS = 10;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +36,30 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void openItemSelectionActivity(View view) {
+        Intent intent = new Intent(this, ItemSelectionActivity.class);
+        startActivityForResult(intent, ITEM_REQUEST);
+    }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == ITEM_REQUEST) {
+            if (resultCode == RESULT_OK) {
+                String itemName = data.getStringExtra(ItemSelectionActivity.EXTRA_ITEM);
+                addItem(itemName);
+            }
+        }
+    }
+
+    private void addItem(String itemName) {
+        if (pos + 1 < MAX_POS) {
+            TextView textView = items[pos++];
+            textView.setText(itemName);
+            textView.setVisibility(View.VISIBLE);
+        } else {
+            Toast toast = Toast.makeText(this, "Too many items!", Toast.LENGTH_SHORT);
+            toast.show();
+        }
     }
 }

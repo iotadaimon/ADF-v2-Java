@@ -9,7 +9,7 @@ import android.widget.Button;
 
 public class ItemSelectionActivity extends AppCompatActivity {
 
-    private static final String EXTRA_ITEM = "com.example.twoactivitieschallenge.extra.ITEM";
+    public static final String EXTRA_ITEM = "com.example.twoactivitieschallenge.extra.ITEM";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
